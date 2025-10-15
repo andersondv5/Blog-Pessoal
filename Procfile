@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput && gunicorn seu_projeto.wsgi --log-file -
+web: python manage.py collectstatic --noinput && gunicorn core.wsgi --log-file -
