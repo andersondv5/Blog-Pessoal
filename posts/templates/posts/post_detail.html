@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load youtube %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }} - The Quiet Observer</title>
+    
+    {% load static %}
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black max-w-[700px] mx-auto px-6 py-12">
+
+    <header class="mb-16">
+        <div class="flex justify-between items-start">
+            <div>
+                <h1 class="text-3xl font-serif font-light mb-3">The Quiet Observer</h1>
+                <p class="text-gray-600 mb-6 text-lg">
+                    <a href="{% url 'sobre_mim' %}" class="hover:text-black transition duration-200">Anderson Silva</a>
+                </p>
+                <p class="text-sm text-gray-500 uppercase tracking-wide">Falando sobre coisas da vida</p>
+            </div>
+            <nav>
+                <a href="{% url 'post_list' %}" class="text-gray-600 hover:text-black transition duration-200 text-sm">
+                    blog
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="space-y-12">
+            <header class="space-y-6">
+                <div class="space-y-4">
+                    <h1 class="text-4xl font-serif font-light leading-tight">{{ post.title }}</h1>
+                    
+                    <div class="flex items-center space-x-4 text-gray-600">
+                        <p>Por <a href="{% url 'sobre_mim' %}" class="hover:text-black transition duration-200 border-b border-yellow-400">Anderson Silva</a></p>
+                        <span>•</span>
+                        <time>{{ post.published_at|date:"d . F . Y" }}</time>
+                    </div>
+
+                    {% if post.subtitle %}
+                        <p class="text-xl text-gray-700 font-serif leading-relaxed border-l-4 border-yellow-400 pl-4 py-2 bg-yellow-50">
+                            {{ post.subtitle }}
+                        </p>
+                    {% endif %}
+                </div>
+            </header>
+
+            <div class="text-gray-700 leading-relaxed space-y-8">
+                <div class="post-conteudo space-y-6 text-lg">
+                    {{ post.content|linebreaksbr }}
+                </div>
+            </div>
+
+            <!-- Navegação entre posts -->
+            <div class="flex justify-between items-center pt-8 border-t border-gray-200">
+                {% if next_post %}
+                    <a href="{{ next_post.get_absolute_url }}" class="text-gray-600 hover:text-black transition duration-200 text-sm group">
+                        <span class="flex items-center space-x-2">
+                            <span class="group-hover:-translate-x-1 transition duration-200">←</span>
+                            <span>
+                                <span class="text-xs text-gray-500 block">Post anterior</span>
+                                {{ next_post.title }}
+                            </span>
+                        </span>
+                    </a>
+                {% else %}
+                    <span></span>
+                {% endif %}
+
+                <span class="text-gray-500 text-sm">
+                    {% if post_number and total_posts %}
+                        {{ post_number }} de {{ total_posts }}
+                    {% endif %}
+                </span>
+
+                {% if previous_post %}
+                    <a href="{{ previous_post.get_absolute_url }}" class="text-gray-600 hover:text-black transition duration-200 text-sm group text-right">
+                        <span class="flex items-center space-x-2 justify-end">
+                            <span>
+                                <span class="text-xs text-gray-500 block">Próximo post</span>
+                                {{ previous_post.title }}
+                            </span>
+                            <span class="group-hover:translate-x-1 transition duration-200">→</span>
+                        </span>
+                    </a>
+                {% else %}
+                    <span></span>
+                {% endif %}
+            </div>
+
+            <footer class="pt-8 border-t border-gray-100">
+                <a href="{% url 'post_list' %}" class="text-gray-600 hover:text-black transition duration-200 text-sm underline">
+                    ← Voltar para o blog
+                </a>
+            </footer>
+        </article>
+    </main>
+
+</body>
+</html>

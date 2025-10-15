@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Anderson Silva -{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="mb-10 pb-8 border-b border-gray-300">
+            <h2 class="text-lg font-serif font-normal">
+                <a href="{{ post.get_absolute_url }}" class="hover:underline decoration-yellow-400">
+                    {{ forloop.counter }}. {{ post.title }}
+                </a>
+            </h2>
+            <time class="text-sm text-gray-500 mt-2 block">{{ post.published_at|date:"d • F • Y" }}</time>
+            {% if post.subtitle %}
+                <p class="text-gray-600 mt-3 leading-relaxed text-sm">{{ post.subtitle }}</p>
+            {% endif %}
+        </article>
+    {% empty %}
+        <p class="text-gray-600">Nenhum post publicado ainda.</p>
+    {% endfor %}
+{% endblock %}

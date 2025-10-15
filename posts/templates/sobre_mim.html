@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim - The Quiet Observer</title>
+    
+    {% load static %}
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-black max-w-[700px] mx-auto px-6 py-12">
+
+    <header class="mb-16">
+        <div class="flex justify-between items-start">
+            <div>
+                <h1 class="text-3xl font-serif font-light mb-3">Anderson Silva</h1>
+                <p class="text-gray-600 uppercase tracking-wide text-sm">só um cara pensando alto</p>
+            </div>
+            <nav>
+                <a href="{% url 'post_list' %}" class="text-gray-600 hover:text-black transition duration-200 text-sm">
+                    blog
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="space-y-16">
+            <div class="text-gray-700 leading-relaxed space-y-12">
+                <section class="space-y-4">
+                    <p>Salve, salve! Tenho 27 anos e esse cantinho aqui nasceu da minha cabeça inquieta e de uma mudança interna que vem ocorrendo na minha vida. Sempre fui o tipo de pessoa que fica pensando demais nas coisas - desde por que a gente repete os mesmos erros até como uma xícara de café pode salvar um dia inteiro.</p>
+                    
+                    <p>Esse blog é basicamente minha terapia grátis. Um lugar pra jogar pra fora todas aquelas ideias que ficam ecoando na mente e que, de repente, podem fazer sentido pra mais alguém.</p>
+                </section>
+
+                <div class="border-l-4 border-yellow-400 pl-4 py-2 bg-yellow-50">
+                    <p class="text-gray-600 italic">"A vida é muito curta pra ser levada tão a sério, mas muito importante pra ser ignorada."</p>
+                </div>
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif font-normal text-gray-800">Coisas que me fazem feliz</h2>
+                    <ul class="list-none space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">•</span>
+                            <span>Aquela primeira xícara de café da manhã, ainda em silêncio</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">•</span>
+                            <span>Descobrir uma música nova que parece feita pra mim</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">•</span>
+                            <span>Dias de chuva com livro e cobertor</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">•</span>
+                            <span>Conversas que viram terapia sem ninguém perceber</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif font-normal text-gray-800">Meus hobbies nerds</h2>
+                    <p>Quando não tô pensando demais na vida, você me encontra:</p>
+                    <ul class="list-none space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">🎸</span>
+                            <span><strong>Tocando violão</strong> - já são 12 anos de cordas dedilhadas, do clássico ao rock raiz</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">✏️</span>
+                            <span><strong>Desenhando</strong> - desde que me entendo por gente, sempre com um lápis na mão</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-yellow-400 mr-2">💻</span>
+                            <span><strong>Programando</strong> - assumo, sou bem nerdão mesmo. Atualmente cursando Análise e Desenvolvimento de Sistemas</span>
+                        </li>
+                    </ul>
+                    <p class="text-sm text-gray-500">Basicamente, troquei a infância toda de videogame por violão, lápis, papel e tecnologia. Zero arrependimentos.</p>
+                </section>
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif font-normal text-gray-800">Minhas neuroses favoritas</h2>
+                    <p>Todo mundo tem umas neuras, né? As minhas incluem:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li>Ficar analisando demais cada decisão (tipo qual filme ver no Netflix)</li>
+                        <li>Achar significado profundo em coisas simples</li>
+                        <li>Ter crises existenciais às 2h da manhã</li>
+                        <li>Colecionar cadernos bonitos e quase nunca usar</li>
+                    </ul>
+                </section>
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif font-normal text-gray-800">O que esperar daqui</h2>
+                    <p>Basicamente, pensamentos soltos sobre a vida. Vou falar sobre:</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Autocuidado masculino</li>
+                                <li>Lidar com ansiedade</li>
+                                <li>Hábitos que mudam tudo</li>
+                                <li>Reflexões do dia a dia</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2">
+                            <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                <li>Desaprender bobagens</li>
+                                <li>Crescer sem pressa</li>
+                                <li>Encontrar beleza no simples</li>
+                                <li>Viver com mais intenção</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="space-y-4">
+                    <h2 class="text-xl font-serif font-normal text-gray-800">Meu jeito de ver as coisas</h2>
+                    <p>A vida não vem com manual, então a gente vai aprendendo no caminho. Acredito que pequenos ajustes fazem mais diferença que grandes revoluções.</p>
+                    <p>Gosto de pensar que estamos todos tentando descobrir como ser humano - alguns dias a gente acerta, outros dias erra feio, mas o importante é continuar tentando.</p>
+                </section>
+
+                <div class="bg-gray-50 p-6 rounded-lg space-y-4">
+                    <h3 class="font-medium text-gray-800">No momento...</h3>
+                    <div class="space-y-3">
+                        <p class="text-gray-600">📖 <span class="text-gray-700">Lendo:</span> um livro sobre hábitos e relendo Harry Potter pela 3ª vez</p>
+                        <p class="text-gray-600">🎧 <span class="text-gray-700">Ouvindo:</span> muito lo-fi e uns indie brasileiro desconhecido</p>
+                        <p class="text-gray-600">💭 <span class="text-gray-700">Pensando:</span> em como ser mais presente no agora</p>
+                    </div>
+                </div>
+
+                <section class="space-y-4">
+                    <p class="text-gray-600">Se você se identificou com alguma coisa aqui, fica à vontade pra ler os posts. Talvez a gente tenha mais em comum do que parece.</p>
+                    <p class="text-sm text-gray-500">Afinal, todo mundo tá tentando descobrir essa parada de viver.</p>
+                </section>
+            </div>
+            
+            <footer class="pt-8 border-t border-gray-100">
+                <a href="{% url 'post_list' %}" class="text-gray-600 hover:text-black transition duration-200 text-sm underline">
+                    ← Voltar pro blog
+                </a>
+            </footer>
+        </article>
+    </main>
+
+</body>
+</html>
